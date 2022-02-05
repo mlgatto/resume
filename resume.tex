@@ -1,0 +1,170 @@
+%% start of file `resume.tex'.
+%% Copyright 2000-2022 Mirko Gatto (miga@iki.fi).
+% This work may be distributed and/or modified under the
+% conditions of the MIT license. See the LICENSE file.
+%
+% Derived from `resume.tex' by Evan Roman available from: https://github.com/evrom/resume/resume.tex
+
+\documentclass[12pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{burgundy}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+\newcommand*{\cventryskill}[7][.25em]{%
+  \cvitem[#1]{#2}{%
+    {\bfseries#3}%
+    \ifthenelse{\equal{#4}{}}{}{{#4}}%
+    \ifthenelse{\equal{#5}{}}{}{ #5}%
+    \ifthenelse{\equal{#6}{}}{}{ #6}%
+    .\strut%
+    \ifx&#7&%
+      \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
+     
+\newcommand*{\cvproject}[7][.25em]{%
+  \cvitem[#1]{#2}{%
+    {\bfseries#3}%
+    \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}%
+    \ifthenelse{\equal{#5}{}}{}{, #5}%
+    \ifthenelse{\equal{#6}{}}{}{, #6}%
+    \strut%
+    \ifx&#7&%
+    \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
+
+\usepackage{fontawesome5}
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+% adjust the page margins
+\newcommand{\margins}{23mm}
+\usepackage{geometry}
+\geometry{top=19mm, right=\margins, left=\margins, bottom=\margins}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Mirko}{Gatto}
+%\title{} % omitted for public distribution 
+%\address{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+%\phone[mobile]{} % omitted for public distribution
+\email{miga@iki.fi}
+\social[github][github.com/nekoni]{github.com/nekoni}
+\social[github][github.com/mlgatto]{github.com/mlgatto}
+\social[linkedin][linkedin.com/in/mirko-gatto]{linkedin.com/in/mirko-gatto} 
+\begin{document}
+\makecvtitle
+\vspace*{-14mm}
+\section{About me}{
+I’m an Italian software architect specialized in cloud computing, promoter of operational excellence, security, infrastructure as code, and automation. I love to work in diverse and globally distributed teams. I wake in the morning because there are problems to be solved.
+}
+\section{Relevant Experience}
+\cventry{May 2021 - Current}{Principal Software Engineer}{Remote, France}{Trimble Solutions Corporation}{}{
+I worked on a distributed team building cloud native solutions for the Structures division.
+\begin{itemize}
+\item Created an interoperability layer between the Tirmble identity service and the legacy Tekla desktop applications, built with AWS, SAM, .NET Core and C\#.
+\item Created the {\href{https://www.tekla.com}{https://www.tekla.com}} service infrastructure, built with AWS, CDK, ECS, CloudFront, TypeScript and Docker.
+\item Created the common search service embedded in {\href{https://www.tekla.com}{https://www.tekla.com}} and {\href{https://support.tekla.com}{https://support.tekla.com}}, used daily by thousands of Tekla customers to search support articles and marketing material, built with AWS, SAM, .NET Core, C\#, TypeScript, React and Elasticsearch.
+\item Created a generic cross cloud file synchronization solution, built with AWS, CDK, Lambda, Azure, CDK Terraform, Functions and TypeScript.
+\item Worked as solution architect, designing cloud based solutions for the Structures divisions teams, using AWS and Azure.
+\item I was part of the site reliability team rotation, responding to operational and security incidents using PagerDuty.
+\item Developed the security scan pipelines for my teams codebase, using WhiteSource, SonarQube, OWASP Zap and SecurityCodeScan.
+\item Developed a CI/CD pipeline with AWS CodeBuild, BitBucket, TypeScript, NodeJs and React.
+\end{itemize}
+}
+\cventry{May 2018 - May 2021}{Cloud Software Architect}{Remote, France}{Trimble Solutions Corporation}{}{
+I worked on a distributed team building web based solutions for Tekla customers.
+\begin{itemize}
+\item Created the Tekla online CI/CD pipeline, built with AWS, TeamCity, ECS, EFS S3 and Docker.
+\item Created the {\href{https://support.tekla.com}{https://support.tekla.com}} service infrastructure, built with AWS, CloudFormation, CloudFront, WAF, ECS and Docker.
+\item Created a multi-region interoperability layer between the Tekla desktop applications and the license and identity services, built with AWS, SAM, .NET Core and C\#.
+\item Created the Tekla license SDK used by the Tekla desktop applications, built with .NET Framework, SQLite and C\#.
+\item Created the common infrastructure for the Tekla online services, built with AWS, CloudFormation, WAF, Slack, Ansible, Python and Lambda.
+\item Worked as solution architect, designing AWS based solutions for the Tekla online teams.
+\end{itemize}
+}
+\cventry{January 2018 - March 2018}{Cloud System Developer}{Zurich, Switzerland}{Cloudreach}{}{
+I worked on the cloud enablement team, helping customers implementing solutions based on AWS.
+\begin{itemize}
+\item Developed the {\href{https://blick.ch}{https://blick.ch}} service infrastructure built with AWS, ECS, Cloudformation and Docker.
+\end{itemize}
+}
+\cventry{April 2015 - January 2018}{Software Architect}{Espoo, Finland}{Trimble Solutions Corporation}{}{
+I worked on a distributed team building web based solutions for Tekla customers.
+\begin{itemize}
+\item Created the Tekla online services AWS infrastructure using CloudFormation, ElasticBeanstalk, Sumologic, Datadog and PowerShell.
+\item Designed the migration of 12 Tekla online services to AWS. The services were based on .NET, Java, NodeJs and Drupal.
+\item Created a web client application embedded in the Tekla desktop products, built with TypeScript/React.js, CefSharp, C\# and WPF.
+\item Created a tracking and notification service used to collect and process millions of events gathered daily from web, desktop and mobile applications, built with AWS, Lambda, DynamoDb, C\#, .NET core, TypeScript and React. Implemented part of the portable .NET SDK for occasionally connected clients built with C\# and SQLite.
+\item Created a Java application to perform the migration of hundreds of thousands of Tekla customers accounts to the Trimble common identity.
+\item Developed new features in the interoperability layer between Tekla Structures and the Tekla online services, built with C++, C\# .NET and WPF.
+\end{itemize}
+}
+\cventry{January 2011 - April 2015}{Software Engineer}{Espoo, Finland}{Tekla Corporation}{}{
+I worked as a developer and team leader in teams building Tekla products.
+\begin{itemize}
+\item Fusion SDK developer 2014-2015. Fusion SDK provides guidance and tools for modern, easy to build and maintain enterprise applications that run on Windows (WPF) and iOS and Android (Xamarin Forms). My responsibilities included creating top class UI components (WPF, Xamarin Forms), writing documentation, tutoring and training colleagues.
+\item BIM Platform Team Leader and Scrum Master 2012-2014. The BIM Platform provides the building blocks for BIM applications. It offers both UI and Data components to build advanced business applications. My responsibility were scrum master and team leader, developer on UI, data services and mobile applications. I've also maintained Tekla Cop an extension of FxCop for static code analysis.
+\item Tekla BIMsight developer 2011-2012. Served as WPF developer, mainly adding new features and fixing existing bugs.
+\item Construction Management Add-Ons Team Leader 2011.
+\item Tekla Structures Open API developer 2011.
+\end{itemize}
+}
+\cventry{June 2006 - December 2010}{Software Engineer}{Genoa, Italy}{Ansaldo Sistemi Industriali}{}{
+I worked as a developer building the Ansaldo Micro System Environment (AMS).
+\begin{itemize}
+\item Created a web-based diagnostic system built with ASP .NET Framework, C\# and Silverlight.
+\item Created a plug-in based application used to provide the infrastructure for configuration, development, deployment and diagnostic of the AMS, built with .NET Framework, Winforms, C\# and MS SQLServer.
+\item Acted as a teacher in classes for technical support staff and automation engineer (Italian/English).
+\item Administered a VMWare ESX cluster.
+\end{itemize}
+}
+\cventry{January 2000 - January 2002}{Junior Software Engineer}{Genoa, Italy}{Elsag S.p.A.}{}{
+I worked as a developer in teams building a automatic fare collection systems and an electricity stock exchange platform.
+\begin{itemize}
+\item Created a GUI used to control the printing of documents, built with Visual C++.
+\item Created the coding driver used to write to magnetic tickets and contactless cards, built with C++.
+\item Developed a proof of concept version of the new electricity stock exchange platform using ASP.NET 2.0 and JavaScript.
+\item Developed a centralized address book service used in the GME websites, built with ASP.NET 2.0 and JavaScript.
+\item Developed a data warehouse service used to archive GME market results, built with .NET 1.1 and JavaScript.
+\end{itemize}
+}
+\cventry{January 2000 - January 2002}{Junior Software Engineer}{Genoa, Italy}{Telema S.r.l.}{}{
+I worked as a junior developer in teams building industrial automation solutions.
+\begin{itemize}
+\item Created a web-based application to track the employees working hours ASP 3.0 and MS SQL Server.
+\item Developed a desktop software used to control the plastic roll cut, built with Visual C++.
+\item Developed a communication module between remotely operated submarine and the tracking system SCADA, built with C++.
+\end{itemize}
+}
+\section{Education, certifications and courses}
+\cventry{December 2021}{Course}{MOOC}{DevOps with Kubernetes}{\href{https://devopswithkubernetes.com/}{https://devopswithkubernetes.com/}}{}
+\cventry{December 2020}{Course}{MOOC}{Full Stack Open}{\href{https://fullstackopen.com/}{https://fullstackopen.com/}}{}
+\cventry{July 2020}{Certification}{Azure Fundamentals}{Score 94\%}{}{}
+\cventry{February 2018}{Certification}{AWS Solution Architect Associate}{Score 100\%}{}{}
+\cventry{March 2017}{Course}{MOOC}{Cybersecurity Base}{\href{https://cybersecuritybase.mooc.fi/}{https://cybersecuritybase.mooc.fi/}}{}
+\cventry{November 2013}{Certification}{Scrum Alliance}{Espoo, Finland}{Scrum Master}{}
+\cventry{May 2000 - June 2020}{Diploma}{Santi Institute}{Genoa, Italy}{C++ programmer}{}
+\cventry{September 1993 - June 1998}{High school diploma}{ITC Einaudi}{Genoa, Italy}{}{Accountant and programmer}
+\section{Skills}
+\cventryskill{}{Programming Languages:}{}{C\#, TypeScript, Python, Bash, PowerShell, CloudFormation}{}{}
+\cventryskill{}{Frameworks \& Libraries:}{}{React, .NET Framework, AWS SDK}{}{}
+\cventryskill{}{Document Languages:}{}{HTML, Markdown, OpenAPI (swagger)}{}{}
+\cventryskill{}{Databases:}{}{SQLite, DynamoDB}{}{}
+\cventryskill{}{Deployment Environments:}{}{Docker, Kubernetes, K3s}{}{}
+\cventryskill{}{Cloud Environments:}{}{AWS, Azure, Cloudflare}{}{}
+\section{Projects and Open Source}
+\cvproject{}{Personal Blog}{\href{https://blog.xops.dev/}{https://blog.xops.dev/}}{}{}{
+My personal blog delivered from my home network, built with Hugo, k3s, raspberry pi, cloudflare running on a raspberry pi cluster.
+}
+\cvproject{}{Chip-8 Emulator}{\href{https://github.com/nekoni/SharpOtto}{https://github.com/nekoni/SharpOtto}}{}{}{
+Created a chip-8 emulator using C\#, .NET Core and WPF.
+}
+\cvproject{}{NekoDrive NFS client}{\href{https://github.com/nekoni/nekodrive}{https://github.com/nekoni/nekodrive}}{}{}{
+Created an NFS client and libraries for Windows.
+}
+\cvproject{}{This Resume}{\href{https://github.com/mlgatto/resume}{https://github.com/mlgatto/resume}}{}{}{
+View the source of this resume in {\fontfamily{cmr}\selectfont \LaTeX}.
+}
+\end{document}
